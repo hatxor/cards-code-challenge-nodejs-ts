@@ -1,6 +1,24 @@
+import { uuid } from 'uuidv4';
+
 export class CardEntity
 {
-    id: number;
+    private _id: string;
 
-    title: string;
+    private title: string;
+
+    public constructor(title: string)
+    {
+        this._id = uuid();
+        this.title = title;
+    }
+
+    set id(id: string)
+    {
+        this._id = id;
+    }
+
+    get id()
+    {
+        return this._id;
+    }
 }

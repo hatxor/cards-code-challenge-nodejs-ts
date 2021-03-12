@@ -6,9 +6,9 @@ export interface CardRepositoryInterface
 
     create(card: CardEntity);
 
-    findById(id: number);
+    findById(id: string);
 
-    update(id: number, card: CardEntity);
+    update(id: string, card: CardEntity);
 
-    delete(id: number);
+    delete(id: string);
 }

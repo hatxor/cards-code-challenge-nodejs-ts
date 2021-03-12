@@ -4,24 +4,31 @@ import { CardRepositoryInterface } from '../domain/Card/CardRepositoryInterface'
 
 @injectable()
 export class CardRepository implements CardRepositoryInterface {
-    public findAll() {
-        const movidas: CardEntity[] = [{id: 5, title: "hola"}];
+    public findAll(): CardEntity[]
+    {
+        const movidas: CardEntity[] = [new CardEntity('Hola')];
         return movidas;
     }
 
-    public create(post: CardEntity) {
+    public create(card: CardEntity)
+    {
         //
     }
 
-    public findById(id: number) {
+    public findById(id: string): CardEntity | void
+    {
+        const card: CardEntity = new CardEntity('Hola');
+        card.id = id;
+        return card;
+    }
+
+    public update(id: string, card: CardEntity)
+    {
         //
     }
 
-    public update(id: number, post: CardEntity) {
-        //
-    }
-
-    public delete(id: number) {
+    public delete(id: string)
+    {
         //
     }
 }
