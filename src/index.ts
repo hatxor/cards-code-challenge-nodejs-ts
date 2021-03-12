@@ -1,14 +1,14 @@
+import "reflect-metadata";
 import express from "express";
+import container from "./inversify.config";
+import { InversifyExpressServer, interfaces, TYPE } from "inversify-express-utils";
+
+import './controllers/post.controller';
+
 const app = express();
-const port = 8080; // default port to listen
 
-// define a route handler for the default home page
-app.get( "/", ( req, res ) => {
-    res.send( "Hello world!" );
-} );
+const server =  new InversifyExpressServer(container, null, { rootPath: "/api" }, app);
 
-// start the Express server
-app.listen( port, () => {
-    // tslint:disable-next-line:no-console
-    console.log( `server started at http://localhost:${ port }` );
-} );
+const appConfigured = server.build();
+
+const serve = appConfigured.listen(process.env.PORT || 3000, () => `App running on ${serve.address().port}`);
