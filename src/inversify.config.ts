@@ -2,9 +2,10 @@ import TYPES from './types';
 
 import {Container} from 'inversify';
 import { interfaces, TYPE } from 'inversify-express-utils';
-import { PostRepositoryImpl } from './infrastructure/PostRepositoryImpl'; // /repository/Post/PostRepositoryImpl
+import { CardRepositoryInterface } from './domain/Card/CardRepositoryInterface';
+import { CardRepository } from './infrastructure/CardRepository';
 
 const container = new Container();
 
-container.bind<PostRepositoryImpl>(TYPES.PostRepositoryImpl ).to(PostRepositoryImpl).inSingletonScope();
+container.bind<CardRepositoryInterface>(TYPES.CardRepository ).to(CardRepository).inSingletonScope();
 export default container;

@@ -3,7 +3,7 @@ import express from "express";
 import container from "./inversify.config";
 import { InversifyExpressServer, interfaces, TYPE } from "inversify-express-utils";
 
-import './controllers/post.controller';
+import './controllers/card.controller';
 
 const app = express();
 
