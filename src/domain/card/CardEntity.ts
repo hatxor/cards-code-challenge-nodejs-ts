@@ -1,4 +1,4 @@
-import { uuid } from 'uuidv4';
+import { v4 } from 'uuid';
 
 export class CardEntity
 {
@@ -8,7 +8,7 @@ export class CardEntity
 
     public constructor(title: string)
     {
-        this._id = uuid();
+        this._id = v4();
         this.title = title;
     }
 

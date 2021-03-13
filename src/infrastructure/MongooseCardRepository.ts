@@ -3,7 +3,8 @@ import { CardEntity } from '../domain/Card/CardEntity'
 import { CardRepositoryInterface } from '../domain/Card/CardRepositoryInterface'
 
 @injectable()
-export class CardRepository implements CardRepositoryInterface {
+export class MongooseCardRepository implements CardRepositoryInterface
+{
     public findAll(): CardEntity[]
     {
         const movidas: CardEntity[] = [new CardEntity('Hola')];
