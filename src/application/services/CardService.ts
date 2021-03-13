@@ -1,6 +1,6 @@
 import { injectable, inject } from "inversify";
 import { CardRepositoryInterface } from '../../domain/Card/CardRepositoryInterface'
-import { CardEntity } from '../../domain/Card/CardEntity'
+import CardEntity from '../../domain/Card/CardEntity'
 import TYPES from '../../types';
 
 @injectable()

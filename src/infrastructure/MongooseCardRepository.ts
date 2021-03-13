@@ -1,14 +1,14 @@
 import { injectable } from "inversify";
-import { CardEntity } from '../domain/Card/CardEntity'
+import mongoose from 'mongoose';
+import CardEntity from '../domain/Card/CardEntity'
 import { CardRepositoryInterface } from '../domain/Card/CardRepositoryInterface'
 
 @injectable()
 export class MongooseCardRepository implements CardRepositoryInterface
 {
-    public findAll(): CardEntity[]
+    public findAll()
     {
-        const movidas: CardEntity[] = [new CardEntity('Hola')];
-        return movidas;
+        return mongoose.model('CardEntity').find().exec();
     }
 
     public create(card: CardEntity)
@@ -16,11 +16,9 @@ export class MongooseCardRepository implements CardRepositoryInterface
         //
     }
 
-    public findById(id: string): CardEntity | void
+    public findById(id: string)
     {
-        const card: CardEntity = new CardEntity('Hola');
-        card.id = id;
-        return card;
+        return mongoose.model('User').findById(id, cb);
     }
 
     public update(id: string, card: CardEntity)

@@ -2,13 +2,13 @@ import { CardEntity } from './CardEntity'
 
 export interface CardRepositoryInterface
 {
-    findAll();
+    // findAll(): CardEntity[];
 
-    create(card: CardEntity);
+    /*create(card: CardEntity);
 
     findById(id: string);
 
     update(id: string, card: CardEntity);
 
-    delete(id: string);
+    delete(id: string);*/
 }
