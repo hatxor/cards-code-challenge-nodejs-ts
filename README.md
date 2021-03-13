@@ -1,1 +1,1 @@
-# Streamloots Cards Code Challenge
+# Cards Code Challenge NodeJS TypeScript
